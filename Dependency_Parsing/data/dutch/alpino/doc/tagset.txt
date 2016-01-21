@@ -1,0 +1,352 @@
+= WOTAN tagset for Dutch (as used with Mbt) =
+
+Source: J.T. Berghmans, "WOTAN: Een automatische grammatikale tagger voor het
+Nederlands", doctoral dissertation, Department of language & Speech, Nijmegen
+University (renamed to Radboud University), december 1994.
+
+Note that feature names are slightly different from original ones, mainly
+because underscores are omitted.
+
+The tagset consist of two levels. A major word class, plus additional features
+specifying subclasses or properties.
+
+
+== Word classes ==
+
+|| Label: || Dutch:                               || English:      ||
+|| Adj    || Adjectief, of bijvoegelijk naamwoord || adjective     ||
+|| Adv    || Adverbum, of bijwoord                || adverb        ||
+|| Art    || Artikel, of lidwoord                 || article       ||
+|| Conj   || Conjunctief, of voegwoord            || conjunctive   ||
+|| Int    || Interjectie, of tussenwerpsel        || interjection  ||
+|| N      || Nomen, of zelfstandig naamword       || noun          ||
+|| Num    || Numeraal                             || numeral       ||
+|| Misc   || Miscelanea, of restcategorie         || miscellaneous ||
+|| Prep   || Prepositie, of voorzetsel            || preposition   ||
+|| Pron   || Pronomen, of voornaamwoord           || pronoun       ||
+|| Punc   || Punctuatie, of leesteken             || punctuation   ||
+|| V      || Verbum, of werkwoord                 || verb          ||
+
+
+== Subclasses and properties ==
+
+=== Adj ===
+
+==== Position 1 ====
+
+|| Label: || Dutch:               || English:           ||
+|| adv    || adverbiaal gebruikt  || adverbially used   ||
+|| attr   || attributief gebruikt || attributively used ||
+|| zelfst || zelfstandig gebruikt || independently used ||
+
+==== Position 2 ====
+
+|| Label: || Dutch:              || English:           ||
+|| stell  || stellende vorm      || positive degree    ||
+|| vergr  || vergotende trap     || comparative degree ||
+|| overtr || overtreffende trap  || superlative degree ||
+
+==== Position 3 ====
+
+|| Label:    || Dutch:                || English:              ||
+|| onverv    || onvervoegde vorm      || uninflected form      ||
+|| vervneut  || gewone vervoegde vorm || normal inflected form ||
+|| vervgen   || genitiefvorm          || genitive form         ||
+|| vervmv    || meervoudsvorm         || plural form           ||
+
+
+=== Adv ===
+
+==== Position 1 ====
+
+|| Label:  || Dutch:                                                                     || English:                                                         ||
+|| gew     || gewone bijwoorden                                                          || normal adverb                                                    ||
+|| pron    || voornaamwoordelijke bijwoorden                                             || pronominal adverb                                                ||
+|| deelv   || bijwoordelijk of prepositioneel deel van scheidbaar samengesteld werkwoord || adverbial or prepositional part of separable verb (phrasal verb) ||
+|| deeladv || prepositioneel deel van een gescheiden voornaamwoordelijk bijwoord         || prepositional part of separared pronominal adverb                ||
+
+==== Position 2 ====
+
+coocurrence constraint: only for Adv(gew,...) or Adv(pron,...)
+
+|| Label:   || Dutch:                               || English:                ||
+|| geenfunc || niet voorzien van functie-informatie || no function information ||
+|| betr     || functie betrekkeijk                  || relative function       ||
+|| vrag     || functie vragend                      || interrogative function  ||
+|| aanw     || functie aanwijzend                   || demonstrative function  ||
+|| onbep    || functie onbepaald                    || indeterminate function  ||
+|| er       || "er"                                 || "er"                    ||
+
+==== Position 3 ====
+
+coocurrence constraint: only for Adv(gew,geen_func,...)
+
+|| Label: || Dutch:              || English:           ||
+|| stell  || stellende vorm      || positive degree    ||
+|| verg   || vergotende trap     || comparative degree ||
+|| overtr || overtreffende trap  || superlative degree ||
+
+==== Position 4 ====
+
+coocurrence constraint: only for Adv(gew,geen_func,...)
+
+|| Label:    || Dutch:                || English:              ||
+|| onverv    || onvervoegde vorm      || uninflected form      ||
+|| vervneut  || gewone vervoegde vorm || normal inflected form ||
+
+
+=== Art ===
+
+==== Position 1 ====
+
+|| Label: || Dutch:    || English:   ||
+|| bep    || bepaald   || definite   ||
+|| onbep  || onbepaald || indefinite ||
+
+==== Position 2 ====
+
+|| Label:         || Dutch:             || English:                     ||
+|| zijd           || zijdig             || non-neuter gender            ||
+|| zijdofmv       || zijdig of meervoud || non-neuter gender or plural  ||
+|| onzijd         || onzijdig           || neuter gender                ||
+|| zijdofonzijd   || zijdig of onzijdig || neuter or non-neuter gender  ||
+
+==== Position 3 ====
+
+|| Label: || Dutch:                   || English:      ||
+|| neut   || geen naamval             || no case       ||
+|| gen    || genitief (2e naamval)    || genitive case ||
+|| dat    || datief (3e naamval)      || dative case   ||
+
+
+=== Conj ===
+
+==== Position 1 ====
+
+|| Label: || Dutch:                      || English:                  ||
+|| neven  || nevenschikkende voegwoorden || coordinating conjunctive  ||
+|| onder  || onderschikkende voegwoorden || subordinating conjunctive ||
+
+
+==== Position 2 ====
+
+|| Label:  || Dutch:                            || English:                       ||
+|| metfin  || gevolgd door een finiete bijzin   || followed by a finite clause    ||
+|| metinf  || gevolgd door een infiniete bijzin || followed by an infinite clause ||
+
+=== Int ===
+
+No features.
+
+=== N ===
+
+==== Position 1 ====
+
+|| Label: || Dutch:    || English:    ||
+|| soort  || soortnaam || common name ||
+|| eigen  || eigennaam || proper name ||
+
+==== Position 2 ====
+
+|| Label: || Dutch:    || English: ||
+|| ev     || enkelvoud || singular ||
+|| mv     || meervoud  || plural   ||
+
+==== Position 3 ====
+
+|| Label: || Dutch:                || English:      ||
+|| neut   || geen naamval          || no case       ||
+|| gen    || genitief (2e naamval) || genitive case ||
+|| dat    || datief (3e naamval)   || dative case   ||
+
+
+=== Num ===
+
+==== Position 1 ====
+
+|| Label: || Dutch:        || English:        ||
+|| hoofd  || hoofdtelwoord || cardinal number ||
+|| rang   || rangtelwoord  || ordinal number  ||
+
+==== Position 2 ====
+
+|| Label: || Dutch:             || English:             ||
+|| bep    || bepaald telwoord   || determinate number   ||
+|| onbep  || onbepaald telwoord || indeterminate number ||
+
+==== Position 3 ====
+
+|| Label: || Dutch:               || English:           ||
+|| zelfst || zelfstandig gebruikt || independently used ||
+|| attr   || attributief gebruikt || attributively used ||
+
+==== Position 4 ====
+
+Cooccurence constraint: only for Num(hoofd,onbep,...)
+
+|| Label: || Dutch:              || English:           ||
+|| stell  || stellende vorm      || positive degree    ||
+|| verg   || vergotende trap     || comparative degree ||
+|| overtr || overtreffende trap  || superlative degree ||
+
+==== Position 5 ====
+
+Cooccurence constraint: only for Num(hoofd,onbep,...)
+
+|| Label:    || Dutch:                || English:              ||
+|| onverv    || onvervoegde vorm      || uninflected form      ||
+|| vervneut  || gewone vervoegde vorm || normal inflected form ||
+|| vervgen   || genitiefvorm          || genitive form         ||
+|| vervmv    || meervoudsvorm         || plural form           ||
+
+
+=== Misc ===
+
+==== Position 1 ====
+
+|| Label:  || Dutch:                           || English:                    ||
+|| afkort  || niet benoemde afkorting          || abbreviation                ||
+|| vreemd  || vreemde expressie                || foreign expression          ||
+|| symbool || niet bij Punc inbegrepen symbool || symbol not included in Punc ||
+
+
+=== Prep ===
+
+==== Position 1 ====
+
+|| Label:   || Dutch:                                    || English:                                 ||
+|| voor     || echt voorzetsel                           || true preposition                         ||
+|| achter   || achterzetsel                              || postposition                             ||
+|| comb     || gecombineerd voorzetsel                   || combined preposition (split preposition) ||
+|| voorinf  || voorzetsel "te" dat voor infinitief staat || preposition "te" preceding an infinitive ||
+
+
+=== Pron ===
+
+==== Position 1 ====
+
+|| Label: || Dutch:                 || English:           ||
+|| per    || persoonlijk            || personal           ||
+|| bez    || beztittelijk           || possessive         ||
+|| ref    || relexief (wederkerend) || reflexive          ||
+|| rec    || reciprook (wederkerig) || reciprocal         ||
+|| aanw   || aanwijzend             || demonstrative      ||
+|| betr   || betrekkelijk           || relative           ||
+|| vrag   || vragend                || interrogative (wh) ||
+|| onbep  || onbepaald              || indeterminate      ||
+
+==== Position 2 ====
+
+Coocurrence constraint: only for Pron(per,...),  Pron(bez,...), and Pron(ref,...).
+
+|| Label: || Dutch:     || English:   ||
+|| 1      || 1e person  || 1st person ||
+|| 2      || 2e persoon || 2nd person ||
+|| 3      || 3e persoon || 3rd person ||
+
+==== Position 3 ====
+
+Coocurrence constraint: only for Pron(per,...),  Pron(bez,...), and Pron(ref,...).
+
+|| Label:   || Dutch:                                         || English:                                   ||
+|| ev       || enkelvoud                                      || singular                                   ||
+|| mv       || meervoud                                       || plural                                     ||
+|| evofmv   || geen onderscheid tussen enkelvoud- of meervoud || no distinction between singular and plural ||
+
+==== Position 4 ====
+
+|| Label:     || Dutch:                                       || English:                                          ||
+|| neut       || geen naamval                                 || no case                                           ||
+|| nom        || nominatief (1e naamval)                      || nominative case                                   ||
+|| gen        || genitief (2e naamval)                        || genitive case                                     ||
+|| acc        || accusatief (4e naamval)                      || accusative case                                   ||
+|| datofacc   || geen onderscheid tussen datief of accusatief || no distinction between dative and accusative case ||
+|| weigen     || "eigen"                                      || the word "own"                                    ||
+|| wzelf      || "zelf"                                       || the word "self"                                   |      
+
+==== Position 5 ====
+
+|| Label: || Dutch:               || English:           ||
+|| zelfst || zelfstandig gebruikt || independently used ||
+|| attr   || attributief gebruikt || attributively used ||
+
+
+=== Punc ===
+
+==== Position 1 ====
+
+|| Label:        || Dutch:                 || English:                  ||
+|| aanhaaldubb   || dubbel aanhalingsteken || double quote              ||
+|| aanhaalenk    || enkel aanhalingsteken  || single quote              ||
+|| dubbpunt      || dubbele punt           || colon                     ||
+|| en            || ampersand              || ampersand                 ||
+|| gedstreep     || gedachtenstreepje      || dash                      ||
+|| haakopen      || openhaak               || opening bracket           ||
+|| haaksluit     || sluithaak              || closing bracket           ||
+|| hellip        || horizontale ellipses   || horizontal ellipsis (...) ||
+|| isgelijk      || is-gelijk-teken        || equal sign                ||
+|| komma         || komma                  || comma                     ||
+|| liggstreep    || liggend streepje       || underscore                ||
+|| maal          || maal-teken             || times sign (x)            ||
+|| plus          || plus-teken             || plus sign                 ||
+|| punt          || punt                   || period                    ||
+|| puntkomma     || puntkomma              || semi-colon                ||
+|| schuinstreep  || schuine streep         || slash                     ||
+|| uitroep       || uitroepteken           || exclamation mark          ||
+|| vraag         || vraagteken             || question mark             ||
+
+=== V ===
+
+==== Position 1 ====
+
+|| Label:       || Dutch:                    || English:                      ||
+|| trans        || transitief werkwoord      || transitive verb               ||
+|| refl         || relexief werkwoord        || reflexive verb                ||
+|| intrans      || intransitief werkwoord    || intransitive verb             ||
+|| hulp         || hulpwerkwoord werkwoord   || auxiliary verb                ||
+|| hulpofkopp   || hulp- of koppelwerkwoord  || auxiliary or copulative verb  ||
+
+==== Position 2 ====
+
+|| Label:  || Dutch:                        || English:                 ||
+|| ott     || onvoltooid tegenwoordige tijd || imperfect present tense  ||
+|| ovt     || onvoltooid verleden tijd      || imperfect past tense     ||
+|| tegdw   || tegenwoordig deelwoord        || present tense participle ||
+|| verldw  || verleden deelwoord            || past tense participle    ||
+|| inf     || infinitief                    || infinitive               ||
+|| conj    || conjunctief                   || conjunctive              ||
+|| imp     || imperatief                    || imperative               ||
+
+
+==== Position 3 ====
+
+Cooccurrence restriction: only for V(_,ott,..) or (V(_,ovt,...)
+
+|| Label:   || Dutch:               || English:               ||
+|| 1        || 1e person            || 1st person             ||
+|| 2        || 2e persoon           || 2nd person             ||
+|| 3        || 3e persoon           || 3rd person             ||
+|| 1of2of3  || 1e, 2e of 3e persoon || 1st, 2nd or 3rd person ||
+
+Cooccurrence restriction: only for V(_,inf,..)
+
+|| Label:   || Dutch:                 || English:          ||
+|| subst    || substantivaal gebruikt || nominatively used ||
+
+Cooccurrence restriction: only for V(_,ott,..) or (V(_,ovt,...)
+
+|| Label:    || Dutch:                || English:              ||
+|| onverv    || onvervoegde vorm      || uninflected form      ||
+|| vervneut  || gewone vervoegde vorm || normal inflected form ||
+|| vervgen   || genitiefvorm          || genitive form         ||
+|| vervmv    || meervoudsvorm         || plural form           ||
+|| vervdat   || datiefvorm            || dative form           ||
+|| vervverg  || vergrotende vorm      || comparative form      ||
+
+==== Position 4 ====
+
+Cooccurrence restriction: only for V(_,ott,..) or (V(_,ovt,...)
+
+|| Label: || Dutch:    || English: ||
+|| ev     || enkelvoud || singular ||
+|| mv     || meervoud  || plural   ||
