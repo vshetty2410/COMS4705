@@ -1,0 +1,21 @@
+vs2567@paris:~/hidden/5117970248/Homework1$ python solutionsA.py                  
+Part A time: 18.21 sec
+vs2567@paris:~/hidden/5117970248/Homework1$ python solutionsB.py                  
+Part B time: 552.82 sec
+vs2567@paris:~/hidden/5117970248/Homework1$ python perplexity.py output/A2.uni.t  xt data/Brown_train.txt
+The perplexity is 1052.4865859
+vs2567@paris:~/hidden/5117970248/Homework1$ python perplexity.py output/A2.bi.txt data/Brown_train.txt
+The perplexity is 53.8984761198
+vs2567@paris:~/hidden/5117970248/Homework1$ python perplexity.py output/A2.tri.txt data/Brown_train.txt
+The perplexity is 5.7106793082
+vs2567@paris:~/hidden/5117970248/Homework1$ python perplexity.py output/A3.txt data/Brown_train.txt
+The perplexity is 12.5516094886
+vs2567@paris:~/hidden/5117970248/Homework1$ python perplexity.py output/Sample1_scored.txt data/Sample1.txt
+The perplexity is 11.1670289158
+vs2567@paris:~/hidden/5117970248/Homework1$ python perplexity.py output/Sample2_scored.txt data/Sample2.txt
+The perplexity is 1611240282.44
+vs2567@paris:~/hidden/5117970248/Homework1$ python pos.py output/B5.txt data/Brown_tagged_dev.txt
+Percent correct tags: 93.3226493638
+vs2567@paris:~/hidden/5117970248/Homework1$ python pos.py output/B6.txt data/Brown_tagged_dev.txt
+Percent correct tags: 87.9985146677
+vs2567@paris:~/hidden/5117970248/Homework1$
